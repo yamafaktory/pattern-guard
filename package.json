@@ -33,5 +33,11 @@
     "test": "jest",
     "preversion": "git pull && npm up && npm run std --silent && npm test",
     "postversion": "git push --tags origin HEAD"
+  },
+  "standard": {
+    "globals": [
+      "expect",
+      "test"
+    ]
   }
 }

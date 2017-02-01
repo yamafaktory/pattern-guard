@@ -4,7 +4,7 @@ module.exports = class Guards {
   constructor () {
     this.guardRegex = /[^=<>!']=[^=]/
 
-    this.templateRegex = /[^\|]\|[^\|]/
+    this.templateRegex = /[^|]\|[^|]/
 
     this.optionsVM = {
       displayErrors: true,
@@ -14,7 +14,7 @@ module.exports = class Guards {
 
   getStack () {
     const origin = Error.prepareStackTrace
-    const error = new Error
+    const error = new Error()
 
     Error.prepareStackTrace = (_, stack) => stack
 
@@ -32,13 +32,14 @@ module.exports = class Guards {
     return template => {
       const guards = this.parse(template.raw[0])
       const lineOffset = this.getStack()[1].getLineNumber()
-
-      // First truthy guard is returned, like in Haskell.
-      return guards[(
+      const firstTruthyGuard = (
         guards.map(
           g => this.runInVM(g.eval, constants, lineOffset)
         )
-      ).findIndex(a => a === true)].result
+      ).findIndex(a => a === true)
+
+      // First truthy guard is returned, like in Haskell.
+      return guards[firstTruthyGuard].result
     }
   }
 
