@@ -1,0 +1,37 @@
+{
+  "name": "pattern-guard",
+  "version": "0.0.0",
+  "title": "pattern-guard",
+  "description": "JavaScript pattern guards",
+  "keywords": [
+    "guards",
+    "pattern guards",
+    "haskell"
+  ],
+  "homepage": "https://github.com/yamafaktory/pattern-guard",
+  "author": {
+    "name": "Davy Duperron",
+    "url": "https://github.com/yamafaktory"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yamafaktory/pattern-guard"
+  },
+  "engines": {
+    "npm": ">=3.0.0",
+    "node": ">=6.0.0"
+  },
+  "devDependencies": {
+    "jest": "18.1.0",
+    "snazzy": "5.0.0",
+    "standard": "8.6.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "std": "standard --verbose | snazzy",
+    "test": "jest",
+    "preversion": "git pull && npm up && npm run std --silent && npm test",
+    "postversion": "git push --tags origin HEAD"
+  }
+}
