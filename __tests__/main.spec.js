@@ -66,3 +66,18 @@ test('logical operators', () => {
     `
   ).toBe(1)
 })
+
+test('otherwise', () => {
+  const Guards = require('../')
+  const [a, b, c] = [1, 2, 3]
+  const guards = new Guards()
+
+  expect(
+    guards.equal({ a, b, c })`
+      | a > b = 'nope'
+      | b > c = 'nope'
+      | c < a = 'nope'
+      | true = 'yep'
+    `
+  ).toBe('yep')
+})

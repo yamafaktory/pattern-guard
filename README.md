@@ -16,6 +16,7 @@ const result = guards.equal({ a, b, c })`
   | b > c = 999
   | c > a = 42
   | c > b = 11
+`
 
 console.log(result) // 42
 ```
@@ -28,6 +29,21 @@ guards.equal({ a, b, c })`a < b = 'yep' | b > c = 'nope' | c > a = 'maybe'`
 ```
 
 And they support all comparison operators `< <= == === !== != >= >` and the logical operators too `&& || !`.
+
+In Haskell, the `otherwise` keyword is used as a catch-all. To avoid using this keyword as variable name this logic is not implemented in the module, you can simply emulate the same behaviour by using `true`:
+
+``` js
+const [a, b, c] = [1, 2, 3]
+
+const result = guards.equal({ a, b, c })`
+  | a > b = 'nope'
+  | b > c = 'nope'
+  | c < a = 'nope'
+  | true = 'yep'
+`
+
+console.log(result) // 'yep'
+```
 
 ## Internals
 
