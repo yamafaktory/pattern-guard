@@ -6,6 +6,7 @@ class Guards {
   }
 
   buildPredicate (constants, guard) {
+    // eslint-disable-next-line
     return new Function(
       '',
       [
