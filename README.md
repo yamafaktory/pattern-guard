@@ -1,4 +1,4 @@
-# Pattern-guard :guardsman-tone1: [![Build Status](https://travis-ci.org/yamafaktory/pattern-guard.svg?branch=master)](https://travis-ci.org/yamafaktory/pattern-guard) [![npm version](https://img.shields.io/npm/v/pattern-guard.svg?style=flat)](https://www.npmjs.com/package/pattern-guard) [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+# Pattern-guard 💂 [![Build Status](https://travis-ci.org/yamafaktory/pattern-guard.svg?branch=master)](https://travis-ci.org/yamafaktory/pattern-guard) [![npm version](https://img.shields.io/npm/v/pattern-guard.svg?style=flat)](https://www.npmjs.com/package/pattern-guard) [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 Pattern-guard is a small NodeJS module that brings you the [Haskell guards syntax](https://wiki.haskell.org/Pattern_guard) in JavaScript.
 
@@ -17,7 +17,7 @@ const result = guards.equal({ a, b, c })`
   | c > a = 42
   | c > b = 11
 
-console.log(result) //42
+console.log(result) // 42
 ```
 Please note that, like in Haskell, the first truthy guard will be returned.
 
