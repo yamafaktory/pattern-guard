@@ -2,8 +2,9 @@
   "name": "pattern-guard",
   "version": "0.2.2",
   "title": "pattern-guard",
-  "description": "JavaScript pattern guards",
+  "description": "Haskell pattern guards in JavaScript",
   "keywords": [
+    "condition",
     "guards",
     "pattern guards",
     "haskell"
