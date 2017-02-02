@@ -49,6 +49,98 @@ console.log(result) // 'yep'
 
 This module is only supported by NodeJS as it internally uses the safe [`vm` module](https://nodejs.org/api/vm.html) in order to compile and run code within V8 Virtual Machine contexts.
 
+The execution time is perfectly fine, for example the following example runs in **less than 4ms** on a MacBook Pro:
+
+```js
+const [
+  a,
+  b,
+  c,
+  d,
+  e,
+  f,
+  g,
+  h,
+  i,
+  j,
+  k,
+  l,
+  m,
+  n,
+  o,
+  p,
+  q,
+  r,
+  s,
+  t,
+  u,
+  v,
+  w,
+  x,
+  y,
+  z
+] = Array.from({ length: 26 }, (v, i) => i)
+
+console.time()
+const result = guards.equal({
+  a,
+  b,
+  c,
+  d,
+  e,
+  f,
+  g,
+  h,
+  i,
+  j,
+  k,
+  l,
+  m,
+  n,
+  o,
+  p,
+  q,
+  r,
+  s,
+  t,
+  u,
+  v,
+  w,
+  x,
+  y,
+  z
+})`
+  | a > b = 1
+  | b > c = 2
+  | c > d = 3
+  | d > e = 4
+  | e > f = 5
+  | f > g = 6
+  | g > h = 7
+  | h > i = 8
+  | i > j = 9
+  | j > k = 10
+  | k > l = 11
+  | l > m = 12
+  | m > n = 13
+  | n > o = 14
+  | o > p = 15
+  | p > q = 16
+  | q > r = 17
+  | r > s = 18
+  | s > t = 19
+  | t > u = 20
+  | u > v = 21
+  | v > w = 22
+  | w > x = 23
+  | x > y = 24
+  | y < z = 25
+`
+console.timeEnd() // 3.676ms
+
+console.log(result) // 25
+```
+
 ## Linting
 
 The code quality is checked by the [JavaScript Standard Style](http://standardjs.com/).
