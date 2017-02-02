@@ -1,10 +1,9 @@
 test('numbers', () => {
-  const Guards = require('../')
+  const guards = require('../')
   const [a, b, c] = [1, 3, 7]
-  const guards = new Guards()
 
   expect(
-    guards.equal({ a, b, c })`
+    guards({ a, b, c })`
       | a > b = 1337
       | b > c = 999
       | c > a = 42
@@ -13,12 +12,11 @@ test('numbers', () => {
 })
 
 test('strings', () => {
-  const Guards = require('../')
+  const guards = require('../')
   const [a, b, c] = [1, 3, 7]
-  const guards = new Guards()
 
   expect(
-    guards.equal({ a, b, c })`
+    guards({ a, b, c })`
       | a > b = 'nope'
       | b > c = 'nope'
       | c > a = 'yep'
@@ -27,22 +25,20 @@ test('strings', () => {
 })
 
 test('inline', () => {
-  const Guards = require('../')
+  const guards = require('../')
   const [a, b, c] = [1, 1, 7]
-  const guards = new Guards()
 
   expect(
-    guards.equal({ a, b, c })`a < b = 'yep' | b > c = 'nope' | c > a = 'maybe'`
+    guards({ a, b, c })`a < b = 'yep' | b > c = 'nope' | c > a = 'maybe'`
   ).toBe('maybe')
 })
 
 test('complex comparison operators', () => {
-  const Guards = require('../')
+  const guards = require('../')
   const [a, b, c] = [1, 11, 11]
-  const guards = new Guards()
 
   expect(
-    guards.equal({ a, b, c })`
+    guards({ a, b, c })`
       | a === b = 1
       | a != c = 2
       | b >= c = 3
@@ -54,12 +50,11 @@ test('complex comparison operators', () => {
 })
 
 test('logical operators', () => {
-  const Guards = require('../')
+  const guards = require('../')
   const [a, b, c] = [true, false, true]
-  const guards = new Guards()
 
   expect(
-    guards.equal({ a, b, c })`
+    guards({ a, b, c })`
       | a || b = 1
       | b && c = 2
       | !a = 3
@@ -68,12 +63,11 @@ test('logical operators', () => {
 })
 
 test('otherwise', () => {
-  const Guards = require('../')
+  const guards = require('../')
   const [a, b, c] = [1, 2, 3]
-  const guards = new Guards()
 
   expect(
-    guards.equal({ a, b, c })`
+    guards({ a, b, c })`
       | a > b = 'nope'
       | b > c = 'nope'
       | c < a = 'nope'
@@ -83,7 +77,7 @@ test('otherwise', () => {
 })
 
 test('long example', () => {
-  const Guards = require('../')
+  const guards = require('../')
   const [
     a,
     b,
@@ -112,10 +106,9 @@ test('long example', () => {
     y,
     z
   ] = Array.from({ length: 26 }, (v, i) => i)
-  const guards = new Guards()
 
   expect(
-    guards.equal({
+    guards({
       a,
       b,
       c,
