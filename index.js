@@ -38,6 +38,8 @@ module.exports = class Guards {
         )
       ).findIndex(a => a === true)
 
+      if (firstTruthyGuard === -1) this.error('No truthy guard found!')
+
       // First truthy guard is returned, like in Haskell.
       return guards[firstTruthyGuard].result
     }
