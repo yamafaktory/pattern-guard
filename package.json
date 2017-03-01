@@ -24,9 +24,9 @@
     "node": ">=6.0.0"
   },
   "devDependencies": {
-    "jest": "18.1.0",
-    "snazzy": "5.0.0",
-    "standard": "8.6.0"
+    "jest": "19.0.2",
+    "snazzy": "6.0.0",
+    "standard": "9.0.0"
   },
   "main": "index.js",
   "scripts": {
