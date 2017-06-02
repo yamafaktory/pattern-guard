@@ -24,7 +24,7 @@
     "node": ">=6.0.0"
   },
   "devDependencies": {
-    "jest": "20.0.3",
+    "jest": "20.0.4",
     "jest-cli": "20.0.3",
     "snazzy": "6.0.0",
     "standard": "10.0.1"
