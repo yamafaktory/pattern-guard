@@ -1,6 +1,6 @@
 {
   "name": "pattern-guard",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "title": "pattern-guard",
   "description": "Haskell pattern guards in JavaScript",
   "keywords": [
