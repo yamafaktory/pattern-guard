@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "jest": "20.0.4",
-    "jest-cli": "20.0.4",
+    "jest-cli": "21.1.0",
     "snazzy": "6.0.0",
     "standard": "10.0.1"
   },
