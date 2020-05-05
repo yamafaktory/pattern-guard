@@ -1,6 +1,6 @@
 # Pattern-guard 💂 [![Build Status](https://travis-ci.org/yamafaktory/pattern-guard.svg?branch=master)](https://travis-ci.org/yamafaktory/pattern-guard) [![npm version](https://img.shields.io/npm/v/pattern-guard.svg?style=flat)](https://www.npmjs.com/package/pattern-guard) [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/yamafaktory/pattern-guard.svg)](https://greenkeeper.io/)
+
 
 Pattern-guard is a small module that brings you the [Haskell guards syntax](https://wiki.haskell.org/Pattern_guard) in JavaScript.
 
